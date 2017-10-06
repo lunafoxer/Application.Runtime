@@ -643,20 +643,28 @@ namespace ApplicationRuntime
             int len = Marshal.ReadInt32(ptr - 4);
             return Marshal.PtrToStringAnsi(ptr, len);
         }
-        public bool dizUpdateField(int fid, string fieldname, string fielddata)
+        public bool dizUpdateField(int fid, string fieldname, string fielddata = "")
         {
+            if (fielddata == "")
+            {
+                return Luna.dizUpdateField(fid, fieldname, (IntPtr)0);
+            }
             IntPtr ptr = MallocIntptr(fielddata);
             ptr = ptr + 4;//将内存指针位置加 4 以兼容易语言内存操作模式
-            return Luna.dizUpdateField(fid, fieldname, ptr);
+            return Luna.dizUpdateField(fid, fieldname, (IntPtr)0);
         }
         public bool dizUpdateFieldFromFile(int fid, string fieldname, string filename)
         {
-            return Luna.dizUpdateFieldFromFile(fid, fieldname, filename,0);
+            return Luna.dizUpdateFieldFromFile(fid, fieldname, filename, 0);
         }
         public bool dizAddField(int fid, string fieldname, string fielddata = "")
         {
             try
             {
+                if (fielddata == "")
+                {
+                    return Luna.dizAddField(fid, fieldname, (IntPtr)0);
+                }
                 IntPtr ptr = MallocIntptr(fielddata);
                 ptr = ptr + 4;//将内存指针位置加 4 以兼容易语言内存操作模式
                 return Luna.dizAddField(fid, fieldname, ptr);
@@ -680,11 +688,11 @@ namespace ApplicationRuntime
         }
         public int dizGetFieldID(int fid, string fieldname)
         {
-            return Luna.dizGetFieldID(fid, fieldname); 
+            return Luna.dizGetFieldID(fid, fieldname);
         }
         public int dizGetTotalFields(int fid)
         {
-            return Luna.dizGetTotalFields(fid); 
+            return Luna.dizGetTotalFields(fid);
         }
         public bool dizDelField(int fid, string fieldname)
         {
