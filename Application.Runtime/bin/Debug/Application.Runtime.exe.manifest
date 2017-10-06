@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application.Runtime.exe" size="38400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application.Runtime.exe" size="38912">
       <assemblyIdentity name="Application.Runtime" version="2017.8.1.10" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cAmm7gCR6x2iH9XnF538RR9ThIqcS9P3YLyX3yLdOTo=</dsig:DigestValue>
+        <dsig:DigestValue>JqIKVmYAL08si5D6cqJefBYSsM2pvKgnow5d0zkkEGA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

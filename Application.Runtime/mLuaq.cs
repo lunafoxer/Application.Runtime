@@ -243,6 +243,10 @@ namespace ApplicationRuntime
             _M.Register = "tochar";
             _Pi = _AddFunction(_Pi, _M);
 
+            _M.Method = "dostring";
+            _M.Register = "dostring";
+            _Pi = _AddFunction(_Pi, _M);
+
             _M.Method = "dizNew";
             _M.Register = "dizNew";
             _Pi = _AddFunction(_Pi, _M);

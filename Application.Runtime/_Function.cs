@@ -564,6 +564,27 @@ namespace ApplicationRuntime
         {
             return char.Parse(par.ToString());
         }
+        public object dostring(string luadata)
+        {
+            try
+            {
+                object[] w = mLuaq.mLua.DoString(luadata);
+                if (w != null)
+                {
+                    if (w.Length > 1)
+                        return w;
+                    else
+                        return w[0];
+                }
+                else
+                    return null;
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message, "Application", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return null;
+            }
+        }
         public static IntPtr MallocIntptr(string strData)
         {
             //先将字符串转化成字节方式   
