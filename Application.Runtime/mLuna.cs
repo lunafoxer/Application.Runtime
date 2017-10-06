@@ -54,7 +54,7 @@ namespace mLuna
         [DllImport("Luna.dll")]
         public static extern bool dizUpdateFieldFromFile(int FID, string fieldname, string filename, int proc);
         [DllImport("Luna.dll")]
-        public static extern bool dizAddField(int FID, string fieldname, IntPtr address, int proc);
+        public static extern bool dizAddField(int FID, string fieldname, IntPtr address);
         [DllImport("Luna.dll")]
         public static extern bool dizAddFieldFromFile(int FID, string fieldname, string filename, int proc);
         [DllImport("Luna.dll")]

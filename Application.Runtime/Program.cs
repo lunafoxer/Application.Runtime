@@ -33,6 +33,7 @@ namespace ApplicationRuntime
                 mLua._Initialize();
                 Application.Run();
             }
+
         }
         static void RegFile()
         {
@@ -63,6 +64,13 @@ namespace ApplicationRuntime
                 MessageBox.Show(e.Message + "\n需要管理员权限。", "Application", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Environment.Exit(0);
             }
+        }
+    }
+    public class APPGUID
+    {
+        public string Get()
+        {
+            return "7b3d2d24-8156-4231-ad0b-274f0c2847e4"; //全局唯一标识符
         }
     }
 }

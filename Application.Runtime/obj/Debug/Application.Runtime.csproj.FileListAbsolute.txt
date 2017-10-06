@@ -55,5 +55,4 @@ H:\Visual Studio\Projects\Application.Runtime.Test\Application.Runtime\obj\Debug
 H:\Visual Studio\Projects\Application.Runtime.Test\Application.Runtime\obj\Debug\Application.Runtime.exe.manifest
 H:\Visual Studio\Projects\Application.Runtime.Test\Application.Runtime\obj\Debug\Application.Runtime.application
 H:\Visual Studio\Projects\Application.Runtime.Test\Application.Runtime\obj\Debug\Application.Runtime.csprojResolveAssemblyReference.cache
-H:\Visual Studio\Projects\Application.Runtime\Application.Runtime\obj\Debug\Application.Runtime.csprojResolveAssemblyReference.cache
 D:\Visual Studio\Projects\Application.Runtime\Application.Runtime\obj\Debug\ApplicationRuntime.InputForm.resources

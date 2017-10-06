@@ -588,14 +588,11 @@ namespace ApplicationRuntime
         {
             //申请非拖管空间   
             IntPtr m_ptr = Marshal.AllocHGlobal(length);
-
             //给非拖管空间清0
             Byte[] btZero = new Byte[length + 1]; //一定要加1,否则后面是乱码，原因未找到   
             Marshal.Copy(btZero, 0, m_ptr, btZero.Length);
-
             //给指针指向的空间赋值   
             Marshal.Copy(btZero, 0, m_ptr, length);
-
             return m_ptr;
         }
         public static bool ConvertIntToByteArray(Int32 m, ref byte[] arry)
@@ -635,11 +632,18 @@ namespace ApplicationRuntime
         {
             return Luna.dizUpdateFieldFromFile(fid, fieldname, filename,0);
         }
-        public bool dizAddField(int fid, string fieldname, string fielddata)
+        public bool dizAddField(int fid, string fieldname, string fielddata = "")
         {
-            IntPtr ptr = MallocIntptr(fielddata);
-            ptr = ptr + 4;//将内存指针位置加 4 以兼容易语言内存操作模式
-            return Luna.dizAddField(fid, fieldname, ptr, 0);
+            try
+            {
+                IntPtr ptr = MallocIntptr(fielddata);
+                ptr = ptr + 4;//将内存指针位置加 4 以兼容易语言内存操作模式
+                return Luna.dizAddField(fid, fieldname, ptr);
+            }
+            catch
+            {
+                return false;
+            }
         }
         public bool dizAddFieldFromFile(int fid, string fieldname, string filename)
         {
